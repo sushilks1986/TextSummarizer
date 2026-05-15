@@ -1,21 +1,11 @@
-/// Errors thrown by TextSummarizerKit.
+import Foundation  // ← add this
+
 public enum SummarizerError: Error, LocalizedError, Sendable {
 
-    /// Apple Intelligence / FoundationModels is not available on this device,
-    /// or the user has not enabled it in Settings › Apple Intelligence & Siri.
     case modelUnavailable
-
-    /// The model is available in principle but cannot run right now
-    /// (e.g. thermal state, low battery).
     case modelNotReady(String)
-
-    /// The input text was empty or too short to summarise.
     case inputTooShort
-
-    /// The model returned an empty response.
     case emptyResponse
-
-    /// Any other generation failure with an underlying description.
     case generationFailed(String)
 
     public var errorDescription: String? {
