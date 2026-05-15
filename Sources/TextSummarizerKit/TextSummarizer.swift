@@ -144,7 +144,7 @@ public actor TextSummarizer {
             case .deviceNotEligible, .appleIntelligenceNotEnabled:
                 throw SummarizerError.modelUnavailable
             default:
-                throw SummarizerError.modelNotReady(reason.debugDescription)
+                throw SummarizerError.modelNotReady("Model is currently unavailable")  // ← removed reason.debugDescription
             }
         }
     }
