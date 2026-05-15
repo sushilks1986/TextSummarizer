@@ -2,26 +2,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "TextSummarizerKit",
+    name: "TextSummarizer",  // ← changed from TextSummarizerKit
     platforms: [
         .iOS(.v26),
         .macOS(.v26)
     ],
     products: [
         .library(
-            name: "TextSummarizerKit",
-            targets: ["TextSummarizerKit"]
+            name: "TextSummarizer",  // ← changed
+            targets: ["TextSummarizer"]  // ← changed
         )
     ],
     targets: [
         .target(
-            name: "TextSummarizerKit",
-            path: "Sources/TextSummarizerKit"
+            name: "TextSummarizer",  // ← changed
+            path: "Sources/TextSummarizerKit"  // ← keep the folder path as-is
         ),
         .testTarget(
-            name: "TextSummarizerKitTests",
-            dependencies: ["TextSummarizerKit"],
-            path: "Tests/TextSummarizerKitTests"
+            name: "TextSummarizerTests",  // ← changed
+            dependencies: ["TextSummarizer"],  // ← changed
+            path: "Tests/TextSummarizerKitTests"  // ← keep folder path as-is
         )
     ]
 )
